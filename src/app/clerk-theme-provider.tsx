@@ -78,9 +78,11 @@ elements: {
     "bg-cyan-500 text-white hover:bg-cyan-600 rounded-2xl font-medium shadow-none",
   formButtonPrimaryText: "text-white",
 
-  footerActionText: "text-slate-600",
-  footerActionLink: "text-cyan-600 hover:text-cyan-500 font-medium",
-
+ //footerActionText: "text-slate-600",
+ //footerActionLink: "text-cyan-600 hover:text-cyan-500 font-medium",
+ footerAction: "hidden",
+ footerActionText: "hidden",
+ footerActionLink: "hidden",
   identityPreviewText: "text-slate-700",
   formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
   otpCodeFieldInput:
@@ -103,8 +105,9 @@ export default function ClerkThemeProvider({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isAuthPage =
-    pathname?.startsWith("/sign-in") || pathname?.startsWith("/sign-up");
+  //const isAuthPage =
+    //pathname?.startsWith("/sign-in") || pathname?.startsWith("/sign-up");
+    const isAuthPage = pathname?.startsWith("/sign-in");
 
   return (
     <ClerkProvider appearance={isAuthPage ? authAppearance : appAppearance}>
