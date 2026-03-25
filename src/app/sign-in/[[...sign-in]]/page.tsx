@@ -30,7 +30,7 @@ export default function SignInPage() {
             </div>
 
             <div className="flex justify-center xl:justify-end">
-              <div className="w-full max-w-md rounded-[28px] border border-white/10 bg-[#0b1728]/90 p-4 shadow-2xl shadow-black/30 backdrop-blur">
+              <div className="w-full max-w-md rounded-[28px] border border-white/10 bg-[#081220] p-5 shadow-2xl shadow-black/40 backdrop-blur">
                 <SignIn />
               </div>
             </div>
