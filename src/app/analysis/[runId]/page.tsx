@@ -1003,8 +1003,8 @@ export default function AnalysisPage({
 
                 {groupMode === "none" ? (
                   <div className="mt-6 overflow-hidden rounded-[24px] border border-white/10">
-                    <div className="overflow-x-auto">
-                      <table className="min-w-full text-left text-sm">
+                    <div className="w-full overflow-hidden">
+                      <table className="w-full table-fixed text-left text-sm">
                         <thead className="bg-white/[0.04] text-slate-400">
                           <tr className="border-b border-white/10">
                             <SortableTh
@@ -1032,16 +1032,18 @@ export default function AnalysisPage({
                               onClick={() => updateSort("cpt_code", sortKey, sortDirection, setSortKey, setSortDirection)}
                             />
                             <th className="px-4 py-4 font-medium">POS</th>
-                            <th className="px-4 py-4 font-medium">Paid</th>
-                            <th className="px-4 py-4 font-medium">Expected</th>
+                            <th className="px-4 py-4 font-medium w-[90px]">Paid</th>
+                            <th className="px-4 py-4 font-medium w-[90px]">Expected</th>
                             <SortableTh
                               label="Gap"
+                              className="w-[80px]"
                               active={sortKey === "gap_amount"}
                               direction={sortDirection}
                               onClick={() => updateSort("gap_amount", sortKey, sortDirection, setSortKey, setSortDirection)}
                             />
                             <SortableTh
                               label="Deviation"
+                              className="w-[90px]"
                               active={sortKey === "deviation_pct"}
                               direction={sortDirection}
                               onClick={() => updateSort("deviation_pct", sortKey, sortDirection, setSortKey, setSortDirection)}
@@ -1066,7 +1068,7 @@ export default function AnalysisPage({
                                 }`}
                               >
                                 <td className="px-4 py-4 align-top">
-                                  <div className="min-w-[150px]">
+                                  <div className="max-w-[160px] truncate">
                                     <button
                                       onClick={() => {
                                         setSelectedClaimId(claim.claim_id);
@@ -1121,11 +1123,11 @@ export default function AnalysisPage({
                                   <ConfidenceBadge value={claimConfidenceLabel(claim.confidence)} />
                                 </td>
                                 <td className="px-4 py-4 align-top">
-                                  <div className="max-w-[260px]">
+                                  <div className="max-w-[220px] truncate">
                                     <div className="font-medium text-slate-200">
                                       {claim.rule_applied || "—"}
                                     </div>
-                                    <div className="mt-1 text-xs leading-5 text-slate-400">
+                                    <div className="mt-1 truncate text-xs leading-5 text-slate-400">
                                       {claim.rule_reason || "—"}
                                     </div>
                                   </div>
@@ -2166,14 +2168,16 @@ function SortableTh({
   active,
   direction,
   onClick,
+  className = "",
 }: {
   label: string;
   active: boolean;
   direction: SortDirection;
   onClick: () => void;
+  className?: string;
 }) {
   return (
-    <th className="px-4 py-4 font-medium">
+    <th className={`px-4 py-4 font-medium ${className}`}>
       <button
         onClick={onClick}
         className={`inline-flex items-center gap-2 transition ${
