@@ -60,15 +60,18 @@ elements: {
   headerSubtitle: "text-slate-600",
 
   socialButtonsBlockButton:
-    "bg-white text-slate-900 border border-slate-300 hover:bg-slate-50 rounded-2xl shadow-none",
-  socialButtonsBlockButtonText: "text-slate-900 font-medium",
+  "!bg-white !text-slate-900 !border !border-slate-300 hover:!bg-slate-50 rounded-2xl shadow-none",
+  socialButtonsBlockButtonText: "!text-slate-900 font-medium",
 
   dividerLine: "bg-slate-200",
   dividerText: "text-slate-500",
 
   formFieldLabel: "text-slate-800 font-medium",
   formFieldInput:
-    "bg-white text-slate-900 border border-slate-300 rounded-2xl placeholder:text-slate-400 focus:border-cyan-500 focus:ring-0",
+  "!bg-white !text-slate-900 !border !border-slate-400 rounded-2xl placeholder:!text-slate-400 focus:!border-cyan-500 focus:ring-0",
+
+  formFieldRow: "gap-2",
+  formField: "space-y-2",
   formFieldInputShowPasswordButton: "text-slate-500 hover:text-slate-700",
 
   formButtonPrimary:
