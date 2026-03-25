@@ -32,29 +32,32 @@ export default function SignInPage() {
             <div className="flex justify-center xl:justify-end">
               <div className="w-full max-w-md bg-transparent p-0 shadow-none border-0 backdrop-blur-0">
                 <SignIn
-                    appearance={{
-                      elements: {
-                        rootBox: "w-full",
-                        card: "bg-white text-slate-900 shadow-2xl border border-slate-200 rounded-[24px]",
-                        headerTitle: "text-slate-900",
-                        headerSubtitle: "text-slate-600",
-                        socialButtonsBlockButton:
-                          "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50",
-                        socialButtonsBlockButtonText: "text-slate-900",
-                        dividerLine: "bg-slate-200",
-                        dividerText: "text-slate-500",
-                        formFieldLabel: "text-slate-700",
-                        formFieldInput:
-                          "bg-white border border-slate-300 text-slate-900 placeholder:text-slate-400",
-                        formButtonPrimary:
-                          "bg-cyan-500 text-white hover:bg-cyan-400 shadow-none",
-                        footerActionText: "text-slate-600",
-                        footerActionLink: "text-cyan-600 hover:text-cyan-500",
-                        identityPreviewText: "text-slate-700",
-                        formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
-                      },
-                    }}
-                  />
+                  routing="path"
+                  path="/sign-in"
+                  forceRedirectUrl="/home"
+                  appearance={{
+                    elements: {
+                      rootBox: "w-full",
+                      card: "bg-white text-slate-900 shadow-2xl border border-slate-200 rounded-[24px]",
+                      headerTitle: "text-slate-900",
+                      headerSubtitle: "text-slate-600",
+                      socialButtonsBlockButton:
+                        "border border-slate-300 bg-white text-slate-900 hover:bg-slate-50",
+                      socialButtonsBlockButtonText: "text-slate-900",
+                      dividerLine: "bg-slate-200",
+                      dividerText: "text-slate-500",
+                      formFieldLabel: "text-slate-700",
+                      formFieldInput:
+                        "bg-white border border-slate-300 text-slate-900 placeholder:text-slate-400",
+                      formButtonPrimary:
+                        "bg-cyan-500 text-white hover:bg-cyan-400 shadow-none",
+                      footerActionText: "text-slate-600",
+                      footerActionLink: "text-cyan-600 hover:text-cyan-500",
+                      identityPreviewText: "text-slate-700",
+                      formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
+                    },
+                  }}
+                />
               </div>
             </div>
           </div>
