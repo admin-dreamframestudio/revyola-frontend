@@ -7,7 +7,7 @@ export default function SignInPage() {
         <section className="relative overflow-hidden rounded-[40px] border border-white/10 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_30%),radial-gradient(circle_at_top_right,_rgba(99,102,241,0.18),_transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.03))] px-8 py-16 shadow-2xl shadow-black/20 backdrop-blur-xl sm:px-10 sm:py-20">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:28px_28px] opacity-20" />
 
-          <div className="relative z-10 grid gap-10 xl:grid-cols-[1fr_520px] xl:items-center">
+          <div className="relative z-10 grid gap-10 xl:grid-cols-[1fr_480px] xl:items-center">
             <div className="max-w-3xl">
               <div className="mb-6 inline-flex rounded-full border border-cyan-300/20 bg-cyan-300/10 px-4 py-2 text-sm text-cyan-100">
                 Secure Revyola Access
@@ -30,7 +30,7 @@ export default function SignInPage() {
             </div>
 
             <div className="flex justify-center xl:justify-end">
-              <div className="w-full max-w-md rounded-[28px] border border-white/10 bg-[#081220] p-5 shadow-2xl shadow-black/40 backdrop-blur">
+              <div className="w-full max-w-md bg-transparent p-0 shadow-none border-0 backdrop-blur-0">
                 <SignIn />
               </div>
             </div>
