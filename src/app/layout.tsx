@@ -1,6 +1,14 @@
 import "./globals.css";
 import ClerkThemeProvider from "./clerk-theme-provider";
 
+export const metadata = {
+  title: "Revyola App",
+  description: "Revyola reimbursement intelligence platform",
+  icons: {
+    icon: "/faviconR.png",
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
