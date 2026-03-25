@@ -30,9 +30,9 @@ export default function SignUpPage() {
             </div>
 
             <div className="flex justify-center xl:justify-end">
-              <div className="w-full max-w-md rounded-[28px] border border-white/10 bg-[#0b1728]/90 p-4 shadow-2xl shadow-black/30 backdrop-blur">
+             {/*  <div className="w-full max-w-md rounded-[28px] border border-white/10 bg-[#0b1728]/90 p-4 shadow-2xl shadow-black/30 backdrop-blur">
                 <SignUp />
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

@@ -35,7 +35,7 @@ export default function SignInPage() {
                   routing="path"
                   path="/sign-in"
                   forceRedirectUrl="/home"
-                  signUpUrl={undefined}
+                  //signUpUrl={undefined}
                   appearance={{
                     elements: {
                       rootBox: "w-full",
@@ -57,7 +57,7 @@ export default function SignInPage() {
                       footerActionText: "hidden",
                       footerActionLink: "hidden",
                       identityPreviewText: "text-slate-700",
-                      formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
+                      //formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
                     },
                   }}
                 />
