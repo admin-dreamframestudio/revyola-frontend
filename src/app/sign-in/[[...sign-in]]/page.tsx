@@ -52,8 +52,10 @@ export default function SignInPage() {
                         "bg-white border border-slate-300 text-slate-900 placeholder:text-slate-400",
                       formButtonPrimary:
                         "bg-cyan-500 text-white hover:bg-cyan-400 shadow-none",
-                      footerActionText: "text-slate-600",
-                      footerActionLink: "text-cyan-600 hover:text-cyan-500",
+                     // footerActionText: "text-slate-600",
+                      //footerActionLink: "text-cyan-600 hover:text-cyan-500",
+                      footerActionText: "hidden",
+                      footerActionLink: "hidden",
                       identityPreviewText: "text-slate-700",
                       formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
                     },
