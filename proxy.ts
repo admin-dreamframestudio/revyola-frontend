@@ -4,25 +4,21 @@ import { NextResponse } from "next/server";
 const isPublicRoute = createRouteMatcher([
   "/sign-in(.*)",
   "/sign-up(.*)",
+  "/home(.*)",
 ]);
 
 export default clerkMiddleware(async (auth, req) => {
   const { userId } = await auth();
-  const url = req.nextUrl;
 
-  // ✅ 1. Root redirect logic (THIS is what you need)
-  if (url.pathname === "/") {
-    if (!userId) {
-      return NextResponse.redirect(new URL("/sign-in", req.url));
-    } else {
-      return NextResponse.redirect(new URL("/analysis", req.url));
-    }
+  if (isPublicRoute(req)) {
+    return NextResponse.next();
   }
 
-  // ✅ 2. Protect all other routes
-  if (!isPublicRoute(req) && !userId) {
+  if (!userId) {
     return NextResponse.redirect(new URL("/sign-in", req.url));
   }
+
+  return NextResponse.next();
 });
 
 export const config = {
