@@ -53,30 +53,45 @@ const authAppearance = {
     colorDanger: "#dc2626",
     borderRadius: "16px",
   },
-  elements: {
-    card: "bg-white border border-slate-200 shadow-2xl rounded-[24px]",
-    rootBox: "w-full",
-    headerTitle: "text-slate-900 text-2xl font-semibold",
-    headerSubtitle: "text-slate-600",
-    socialButtonsBlockButton:
-      "bg-white text-slate-900 border border-slate-300 hover:bg-slate-50 rounded-2xl shadow-none",
-    socialButtonsBlockButtonText: "text-slate-900 font-medium",
-    dividerLine: "bg-slate-200",
-    dividerText: "text-slate-500",
-    formFieldLabel: "text-slate-700",
-    formFieldInput:
-      "bg-white text-slate-900 border border-slate-300 rounded-2xl placeholder:text-slate-400 focus:border-cyan-500 focus:ring-0",
-    formButtonPrimary:
-      "bg-cyan-500 text-white hover:bg-cyan-600 rounded-2xl font-medium shadow-none",
-    footerActionText: "text-slate-600",
-    footerActionLink: "text-cyan-600 hover:text-cyan-500",
-    identityPreviewText: "text-slate-700",
-    formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
-    otpCodeFieldInput:
-      "bg-white text-slate-900 border border-slate-300 rounded-2xl",
-    alertText: "text-slate-700",
-    alert: "bg-slate-50 border border-slate-200 text-slate-700",
-  },
+elements: {
+  card: "bg-white border border-slate-200 shadow-2xl rounded-[24px]",
+  rootBox: "w-full",
+  headerTitle: "text-slate-900 text-2xl font-semibold",
+  headerSubtitle: "text-slate-600",
+
+  socialButtonsBlockButton:
+    "bg-white text-slate-900 border border-slate-300 hover:bg-slate-50 rounded-2xl shadow-none",
+  socialButtonsBlockButtonText: "text-slate-900 font-medium",
+
+  dividerLine: "bg-slate-200",
+  dividerText: "text-slate-500",
+
+  formFieldLabel: "text-slate-800 font-medium",
+  formFieldInput:
+    "bg-white text-slate-900 border border-slate-300 rounded-2xl placeholder:text-slate-400 focus:border-cyan-500 focus:ring-0",
+  formFieldInputShowPasswordButton: "text-slate-500 hover:text-slate-700",
+
+  formButtonPrimary:
+    "bg-cyan-500 text-white hover:bg-cyan-600 rounded-2xl font-medium shadow-none",
+  formButtonPrimaryText: "text-white",
+
+  footerActionText: "text-slate-600",
+  footerActionLink: "text-cyan-600 hover:text-cyan-500 font-medium",
+
+  identityPreviewText: "text-slate-700",
+  formResendCodeLink: "text-cyan-600 hover:text-cyan-500",
+  otpCodeFieldInput:
+    "bg-white text-slate-900 border border-slate-300 rounded-2xl",
+
+  alertText: "text-slate-700",
+  alert: "bg-slate-50 border border-slate-200 text-slate-700",
+
+  formFieldHintText: "text-slate-500",
+  formFieldErrorText: "text-red-600",
+  alternativeMethodsBlockButton:
+    "text-slate-700 border border-slate-300 bg-white hover:bg-slate-50",
+  alternativeMethodsBlockButtonText: "text-slate-700",
+},
 };
 
 export default function ClerkThemeProvider({
