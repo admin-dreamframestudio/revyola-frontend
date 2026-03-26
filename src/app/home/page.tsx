@@ -1,14 +1,6 @@
-export const dynamic = "force-dynamic";
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
+"use client";
 
-export default async function HomePage() {
-  const { userId } = await auth();
-
-  if (!userId) {
-    redirect("/sign-in");
-  }
-
+export default function HomePage() {
   return (
     <main className="min-h-screen bg-[#06101d] text-white">
       <div className="mx-auto max-w-[1400px] px-6 py-8">
