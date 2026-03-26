@@ -54,6 +54,7 @@ const authAppearance = {
     borderRadius: "16px",
   },
 elements: {
+  footerAction: { display: "none" },
   card: "bg-white border border-slate-200 shadow-2xl rounded-[24px]",
   rootBox: "w-full",
   headerTitle: "text-slate-900 text-2xl font-semibold",
@@ -80,7 +81,7 @@ elements: {
 
  //footerActionText: "text-slate-600",
  //footerActionLink: "text-cyan-600 hover:text-cyan-500 font-medium",
- footerAction: "hidden",
+ //footerAction: "hidden",
  footerActionText: "hidden",
  footerActionLink: "hidden",
   identityPreviewText: "text-slate-700",
