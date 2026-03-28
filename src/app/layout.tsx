@@ -5,7 +5,7 @@ export const metadata = {
   title: "Revyola App",
   description: "Revyola reimbursement intelligence platform",
   icons: {
-    icon: "/faviconR.png",
+    icon: "/favicon.ico",
   },
 };
 
