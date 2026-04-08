@@ -23,7 +23,38 @@ function formatCurrency(value?: number) {
   }).format(value);
 }
 
+function normalizeIssue(issue?: string) {
+  if (!issue) return "payment variance identified during review";
+  return issue.trim().replace(/\.$/, "");
+}
+
+function buildSubjectLine(data: LetterData) {
+  const claimId = data.claim_id || "—";
+  const payer = data.payer || "Insurance Payer";
+
+  if (data.issue) {
+    return `Re: Request for Payment Review – Claim ${claimId}`;
+  }
+
+  return `Re: Request for Payment Review – ${payer} Claim ${claimId}`;
+}
+
+function buildDefaultAppealText(data: LetterData) {
+  const issue = normalizeIssue(data.issue);
+
+  return [
+    `We are writing to request review of the above-referenced claim following our internal reimbursement review.`,
+    `Our review indicates a potential discrepancy associated with ${issue}.`,
+    `Please review the claim against the applicable fee schedule, reimbursement methodology, contract terms, coding logic, and adjudication rules used in processing.`,
+    `If the claim was processed incorrectly, we respectfully request corrected payment and updated remittance detail.`,
+  ];
+}
+
 export default function LetterDocument({ data }: { data: LetterData }) {
+  const today = new Date().toLocaleDateString("en-US");
+  const subjectLine = buildSubjectLine(data);
+  const defaultParagraphs = buildDefaultAppealText(data);
+
   return (
     <div className="mx-auto w-full max-w-4xl rounded-[28px] border border-black/10 bg-white shadow-[0_20px_80px_rgba(0,0,0,0.12)]">
       <div className="border-b border-black/10 px-8 py-6">
@@ -108,7 +139,7 @@ export default function LetterDocument({ data }: { data: LetterData }) {
 
         <section className="p-8">
           <div className="mb-6 text-sm leading-7 text-slate-700">
-            <p>{new Date().toLocaleDateString("en-US")}</p>
+            <p>{today}</p>
 
             <p className="mt-6">
               Appeals Department
@@ -116,9 +147,7 @@ export default function LetterDocument({ data }: { data: LetterData }) {
               {data.payer || "Insurance Payer"}
             </p>
 
-            <p className="mt-6 font-medium text-slate-900">
-              Re: Request for Payment Review / Underpayment Reconsideration
-            </p>
+            <p className="mt-6 font-medium text-slate-900">{subjectLine}</p>
 
             <p className="mt-4">
               Claim ID: <span className="font-medium text-slate-900">{data.claim_id || "—"}</span>
@@ -131,40 +160,16 @@ export default function LetterDocument({ data }: { data: LetterData }) {
           </div>
 
           <div className="prose prose-slate max-w-none text-[15px] leading-7">
-            <p>
-              Dear Appeals Reviewer,
-            </p>
-
-            <p>
-              We are requesting a review of the reimbursement issued for the above referenced
-              claim. Based on our internal payment integrity review, the amount paid appears to
-              be inconsistent with the expected reimbursement for the billed service.
-            </p>
-
-            <p>
-              The identified variance suggests a potential underpayment related to{" "}
-              <strong>{data.issue || "reimbursement methodology"}</strong>. We request a full
-              reconsideration of this claim and any associated repricing logic, contract terms,
-              or adjudication edits that may have contributed to the variance.
-            </p>
-
-            <p>
-              Expected reimbursement: <strong>{formatCurrency(data.benchmark_amount)}</strong>
-              <br />
-              Actual reimbursement: <strong>{formatCurrency(data.paid_amount)}</strong>
-              <br />
-              Estimated variance: <strong>{formatCurrency(data.delta)}</strong>
-            </p>
+            <p>Dear Appeals Reviewer,</p>
 
             {data.appeal_text ? (
               <p>{data.appeal_text}</p>
             ) : (
-              <p>
-                Please review the claim against the applicable fee schedule, contract terms,
-                coding logic, and payer reimbursement policy. If an error occurred during
-                adjudication, we request corrected payment and updated remittance detail at your
-                earliest convenience.
-              </p>
+              <>
+                {defaultParagraphs.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </>
             )}
 
             <p>
