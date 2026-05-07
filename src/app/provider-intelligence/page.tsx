@@ -54,9 +54,7 @@ export default function ProviderIntelligencePage() {
           </h1>
 
           <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-400 sm:text-base">
-            Search a provider NPI, fetch CMS public utilization data, and generate
-            an executive benchmark report for commercial exposure and estimated
-            annual leakage.
+            Establish your revenue benchmark using publicly available data. Analyze any NPI to define your Estimated Billable Baseline and identify Unrecovered Revenue lost to payer processing errors.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
