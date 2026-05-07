@@ -1,7 +1,7 @@
 "use client";
 
-import { ClerkProvider } from "@clerk/nextjs";
-import { usePathname } from "next/navigation";
+//import { ClerkProvider } from "@clerk/nextjs";
+//import { usePathname } from "next/navigation";
 
 const appAppearance = {
   variables: {
@@ -105,14 +105,5 @@ export default function ClerkThemeProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  //const isAuthPage =
-    //pathname?.startsWith("/sign-in") || pathname?.startsWith("/sign-up");
-    const isAuthPage = pathname?.startsWith("/sign-in");
-
-  return (
-   <ClerkProvider appearance={isAuthPage ? authAppearance : appAppearance}>
-    {children}
-   </ClerkProvider>
-  );
+  return <>{children}</>;
 }

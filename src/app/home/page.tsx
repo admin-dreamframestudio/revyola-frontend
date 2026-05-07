@@ -25,6 +25,17 @@ export default function HomePage() {
               <p className="mt-3 text-sm leading-7 text-slate-400 sm:text-base">
                 Analyze payment behavior. Execute on actionable remittance signals.
               </p>
+
+              <div className="mt-6 flex items-center gap-2 text-sm text-slate-400">
+                <span className="h-1 w-1 rounded-full bg-cyan-300" />
+
+                <a
+                  href="/provider-intelligence"
+                  className="transition hover:text-cyan-200"
+                >
+                  Generate Public Revenue Benchmark →
+                </a>
+              </div>
             </div>
           </div>
         </section>
